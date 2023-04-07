@@ -44,6 +44,12 @@ contract NftMarketplace is ReentrancyGuard {
         uint256 tokenId,
         uint256 price
     );
+    event UpdateListing(
+        address seller,
+        address nftAddress,
+        uint256 tokenId,
+        uint256 newPrice
+    );
     event ItemBought(
         address indexed buyer,
         address indexed nftAddress,
@@ -275,7 +281,7 @@ contract NftMarketplace is ReentrancyGuard {
         //!Usamos el evento ItemListing, usado anteriormetne, porque al final,  update un nft es similar a listar de nuevo
         //! el nft
 
-        emit ItemListing(msg.sender, nftAddress, tokenId, newPrice);
+        emit UpdateListing(msg.sender, nftAddress, tokenId, newPrice);
     }
 
     /**END */

@@ -16,6 +16,7 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY;
 const POLYGON_RPC_URL = process.env.POLYGON_RPC_URL;
 const MAINNET_RPC_URL = process.env.MAINNET_RPC_URL;
+const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL;
 
 module.exports = {
   solidity: {
@@ -52,6 +53,12 @@ module.exports = {
       url: GOERLI_RPC_URL,
       accounts: [PRIVATE_KEY],
       chainId: 5,
+      blockConfirmation: 6,
+    },
+    sepolia: {
+      url: SEPOLIA_RPC_URL,
+      accounts: [PRIVATE_KEY],
+      chainId: 11155111,
       blockConfirmation: 6,
     },
     polygon: {

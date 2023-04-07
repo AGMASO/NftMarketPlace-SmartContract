@@ -11,6 +11,8 @@ const fs = require("fs");
 const FRONTEND_ADDRESSES_FILE =
   "../marketplace-nextjs/constants/contractAddresses.json";
 const FRONTEND_ABI = "../marketplace-nextjs/constants/Abi.json";
+const FRONTEND_BASCICNFT_ABI =
+  "../marketplace-nextjs/constants/basicNftabi.json";
 
 module.exports = async function () {
   if (process.env.UPDATE_FRONTEND) {
@@ -31,6 +33,13 @@ async function updateAbi() {
   fs.writeFileSync(
     FRONTEND_ABI,
     nftMarketPlace.interface.format(ethers.utils.FormatTypes.json)
+  );
+
+  const basicNft = await ethers.getContract("BasicNft");
+
+  fs.writeFileSync(
+    FRONTEND_BASCICNFT_ABI,
+    basicNft.interface.format(ethers.utils.FormatTypes.json)
   );
 }
 

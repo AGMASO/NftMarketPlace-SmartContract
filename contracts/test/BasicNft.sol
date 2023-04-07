@@ -16,7 +16,7 @@ contract BasicNft is ERC721 {
 
     uint256 private s_tokenCounter; //Privada
     string public constant TOKEN_URI =
-        "ipfs://bafybeigqxtaro6ak67huabiu4i64kuke7hixoifvjilp65emrx44nfym2y/";
+        "ipfs://bafybeiakjel7qutwaasmappgedbpeub2skwr3pot57cakk7sr5hrd7wqze/?filename=token_uri_basic.json";
 
     constructor() ERC721("Guindaso", "GUI") {
         s_tokenCounter = 0;

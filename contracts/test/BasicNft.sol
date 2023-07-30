@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: SEE LICENSE IN LICENSE
-pragma solidity ^0.8.8;
+pragma solidity ^0.8.7;
 
 /**
  *!Contrato Simple de Nft usando OppenZeppeling
